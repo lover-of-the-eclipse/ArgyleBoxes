@@ -1,6 +1,6 @@
 # Argyle!
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A brief set of puzzles, including a randomized passcode puzzle.
 
 ## Setup
 
