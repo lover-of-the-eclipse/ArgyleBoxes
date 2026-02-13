@@ -1,6 +1,6 @@
 # Argyle!
 
-A brief set of puzzles, including a randomized passcode puzzle.
+A brief set of puzzles, including a randomized passcode puzzle
 
 ## Setup
 
