@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   app: { baseURL: '/ArgyleBoxes/', buildAssetsDir: 'assets' },
 
   nitro: {
-    baseURL: "http://localhost:3000",
+    baseURL: "/ArgyleBoxes/",
     prerender: {
       crawlLinks: false,
       routes: [],
