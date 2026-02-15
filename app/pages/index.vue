@@ -56,8 +56,7 @@ watch(inputCode, async (newVal) => {
 </script>
 
 <template>
-  <div>
-    <div class="flex flex-col items-center justify-center h-dvh w-dvh">
+  <div class="flex flex-col items-center justify-center h-dvh w-dvh">
     <div class="text-4xl">it's locked.</div>
     <div
         class="text-2xl p-4 h-12"
@@ -71,7 +70,6 @@ watch(inputCode, async (newVal) => {
       <div/>
       <button class="keypad-btn" @click="pressNumber(0)">0</button>
       <button class="keypad-btn" @click="backspace">&lt;</button>
-    </div>
     </div>
   </div>
 </template>

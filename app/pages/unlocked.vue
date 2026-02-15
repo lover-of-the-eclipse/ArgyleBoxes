@@ -26,7 +26,8 @@ onMounted(() => {
 <div v-if="ready">
   <div class="p-4 text-2xl">
     Geryon was a monster everything about him was red.
-  </div></div>
+  </div>
+</div>
 </template>
 
 <style scoped>
