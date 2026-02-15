@@ -22,8 +22,8 @@ const enterRedRealm = () => {
     <h1 class="text-3xl font-serif mb-6">kaifu7k@gmail.com</h1>
 
     <button
-      @click="enterRedRealm"
       class="bg-black text-white px-8 py-3 rounded hover"
+      @click="enterRedRealm"
     >
       Go back to Unlocked →
     </button>
