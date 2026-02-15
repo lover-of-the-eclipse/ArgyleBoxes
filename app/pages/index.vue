@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { usePasscodeStore } from "~/stores/passcodeStore";
+import ClueSquare from "~/components/clueSquare.vue";
 
 useHead({
   title: '"it\'s locked."',
@@ -19,7 +20,7 @@ const isFailureAnimating = ref(false);
 
 // takes in a number and appends it to inputCode
 function pressNumber(n: number) {
-  if (inputCode.value.length > 3) {
+  if (inputCode.value.length > 3 || guesses.value === 0) {
     return;
   }
   inputCode.value += n;
@@ -69,9 +70,19 @@ watch(inputCode, async (newVal) => {
 
 <template>
   <div class="relative h-dvh w-dvw overflow-hidden">
-    <div class="flex flex-col items-center justify-center h-dvh w-dvh">
+    <div class="absolute inset-0 -z-10 pointer-events-none">
+      <TresCanvas class="h-full w-full" clear-color="#FDE4E4">
+        <TresPerspectiveCamera :position="[0, 0, 5]" />
+        <ClueSquare />
+      </TresCanvas>
+    </div>
+
+    <!-- foreground ui -->
+    <div
+      class="flex flex-col items-center justify-center h-dvh w-dvh relative z-10 scale-[var(--ui-scale)] origin-top"
+    >
       <div class="text-4xl">it's locked.</div>
-      <div class="text-2xl p-4 h-12" :class="{ shake: isFailureAnimating }">
+      <div class="text-2xl p-4 h-[48px]" :class="{ shake: isFailureAnimating }">
         {{ inputCode }}
       </div>
       <div class="p-2">You have {{ guesses }} guesses left.</div>
@@ -95,7 +106,26 @@ watch(inputCode, async (newVal) => {
 <style scoped>
 .keypad-btn {
   @apply bg-red-600/40 text-white py-4 rounded-lg text-xl font-semibold
-  hover:bg-red-700/40 active:scale-95 transition transform shadow w-20 h-20 text-2xl backdrop-blur-sm;
+  hover:bg-red-500/40 active:scale-95 transition transform shadow w-20 h-20 text-2xl backdrop-blur-sm;
+}
+
+:root {
+  --ui-scale: 1;
+}
+@media (max-width: 900px) {
+  :root {
+    --ui-scale: 0.9;
+  }
+}
+@media (max-width: 700px) {
+  :root {
+    --ui-scale: 0.8;
+  }
+}
+@media (max-width: 500px) {
+  :root {
+    --ui-scale: 0.7;
+  }
 }
 
 @keyframes shake {
