@@ -28,7 +28,7 @@ const enterRedRealm = () => {
         @click="enterRedRealm"
         class="bg-black text-white px-8 py-3 rounded hover"
     >
-      Meet Miles and Kai →
+      Go back to Unlocked →
     </button>
   </div>
 </template>
