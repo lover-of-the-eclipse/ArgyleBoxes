@@ -27,6 +27,14 @@ onMounted(() => {
   <div class="p-4 text-2xl">
     Geryon was a monster everything about him was red.
   </div>
+  <div class="p-4">
+    <NuxtLink
+        to="/contact"
+        class="bg-black text-white px-8 py-3 rounded hover"
+    >
+      Contact Us!
+    </NuxtLink>
+  </div>
 </div>
 </template>
 
