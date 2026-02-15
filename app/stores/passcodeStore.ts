@@ -1,7 +1,7 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
-export const usePasscodeStore = defineStore('passcodeStore', {
-    state: () => ({
-        unlocked: false
-    })
-})
+export const usePasscodeStore = defineStore("passcodeStore", {
+  state: () => ({
+    unlocked: false,
+  }),
+});
